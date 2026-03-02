@@ -1,14 +1,10 @@
 # LuciferForge
 
-**Production safety tools for AI agents. Zero dependencies. Pure Python.**
+**Security and safety infrastructure for AI agents. MIT licensed. Pure Python.**
 
-When you run AI agents autonomously — trading bots, document processors, customer service agents — three things break silently:
+When you run AI agents autonomously — trading bots, code assistants, document processors — three things break silently: costs explode from retry loops, inputs get poisoned by adversarial prompts, and decisions become untraceable when something fails at 3AM.
 
-1. **Cost explodes** — retry loops, model swaps, injection attacks rack up bills while you sleep
-2. **Inputs get poisoned** — external data feeds carry adversarial prompts that hijack model behavior
-3. **Decisions become untraceable** — when something fails at 3AM, you can't reconstruct why
-
-We built the fix. Three libraries. All MIT. All zero-dependency. All local-only.
+We built the fix. Five packages. All MIT. All offline-capable.
 
 ---
 
@@ -19,6 +15,8 @@ We built the fix. Three libraries. All MIT. All zero-dependency. All local-only.
 | [ai-cost-guard](https://github.com/LuciferForge/ai-cost-guard) | Hard budget cap — blocks LLM calls before they exceed your limit | `pip install ai-cost-guard` |
 | [ai-injection-guard](https://github.com/LuciferForge/prompt-shield) | Prompt injection scanner — 22 patterns, 5 categories, entirely offline | `pip install ai-injection-guard` |
 | [ai-decision-tracer](https://github.com/LuciferForge/ai-trace) | Decision logger — JSONL auto-save, Markdown reports, built-in CLI | `pip install ai-decision-tracer` |
+| [agent-safety-mcp](https://github.com/LuciferForge/agent-safety-mcp) | MCP server — gives any AI assistant access to all three tools above | `pip install agent-safety-mcp` |
+| [mcp-security-audit](https://github.com/LuciferForge/mcp-security-audit) | Security auditor — scan any MCP server for injection patterns, risky tools, misconfigs | `pip install mcp-security-audit` |
 
 ### Use all three together
 
@@ -42,4 +40,4 @@ def call_llm(prompt):
 
 ---
 
-Built from 8 months of running autonomous AI trading agents in live financial markets. Every library exists because something broke in production.
+Built from running autonomous AI trading agents in live financial markets. Every package exists because something broke in production.
